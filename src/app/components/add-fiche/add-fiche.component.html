@@ -1,0 +1,196 @@
+
+<div class="col-md-10 mx-auto">
+    <button (click)="gotoList()" class="btn btn-primary">Liste des fiches</button><br><br>
+    <div class="card">
+        <div class="card-header">
+            Nouvelle fiche
+        </div>
+        <div class="card-body">
+          
+            
+        <form #f="ngForm" (ngSubmit)="onSaveFiche(f)">
+           
+            <div class="row">
+                <div class="col">
+                    <div class="form-group">
+                        <label  class="control-label">
+                            Nom *
+                        </label>
+                        <input type="text" name="nom" ngModel class="form-control">
+                    </div> 
+                   </div>
+                   <div class="col">
+                    <div class="form-group">
+                        <label  class="control-label">
+                            Prénom *
+                        </label>
+                        <input type="text" name="prenom" ngModel class="form-control">
+                    </div> 
+                   </div>
+                 
+               </div>
+                
+           <div class="row">
+            <div class="col">
+                <div class="form-group">
+                    <label  class="control-label">
+                        Lieu de Naissance
+                    </label>
+                    <input type="text" name="lieuNaissance" ngModel class="form-control">
+                </div> 
+               </div>
+               <div class="col">
+                <div class="form-group">
+                    <label  class="control-label">
+                        Date naissance
+                    </label>
+                    <input type="date" name="dateNaissance" ngModel class="form-control">
+                </div> 
+               </div>
+             
+           </div>
+         
+
+           <div class="row">
+            <div class="col">
+                <div class="form-group">
+                    <label  class="control-label">
+                        CIN *
+                    </label>
+                    <input type="text" name="cin" ngModel class="form-control">
+                </div> 
+               </div>
+               <div class="col">
+                <div class="form-group">
+                    <label  class="control-label">
+                        Nom de son pére
+                    </label>
+                    <input type="text" name="prenomPere" ngModel class="form-control">
+                </div> 
+               </div>
+             
+           </div>
+
+           <div class="row">
+            <div class="col">
+                <div class="form-group">
+                    <label  class="control-label">
+                        Nom de sa mére
+                    </label>
+                    <input type="text" name="prenomMere" ngModel class="form-control">
+                </div> 
+               </div>
+               <div class="col">
+                <div class="form-group">
+                    <label  class="control-label">
+                        Tribu
+                    </label>
+                    <input type="text" name="ville" ngModel class="form-control">
+                </div> 
+               </div>
+             
+           </div>
+           <div class="row">
+            <div class="col">
+                <div class="form-group">
+                    <label  class="control-label">
+                        Etat civile
+                    </label>
+                    <input type="text" name="etatCivil" ngModel class="form-control">
+                </div> 
+               </div>
+               <div class="col">
+                <div class="form-group">
+                    <label  class="control-label">
+                        Niveau d'étude
+                    </label>
+                    <input type="text" name="niveauEtude" ngModel class="form-control">
+                </div> 
+               </div>
+             
+           </div>
+           <div class="row">
+            <div class="col">
+                <div class="form-group">
+                    <label  class="control-label">
+                        Diplomes
+                    </label>
+                        <textarea class="form-control" name="diplomes" ngModel rows="5" id="comment"></textarea>
+                </div> 
+               </div>
+               <div class="col">
+                <div class="form-group">
+                    <label  class="control-label">
+                        Observations
+                    </label>
+                    <textarea class="form-control" name="observations" ngModel rows="5" id="comment"></textarea>
+                </div> 
+               </div>
+              
+             
+           </div>
+           <div class="row">
+            <div class="col">
+                <div class="form-group">
+                    <label  class="control-label">
+                        Lieu de travail
+                    </label>
+                    <input type="text" name="lieuTravail" ngModel class="form-control">
+                </div> 
+               </div>
+               <div class="col">
+                <div class="form-group">
+                    <label  class="control-label">
+                        Date de mise en service
+                    </label>
+                    <input type="date" name="dateEntreeOffice" ngModel class="form-control">
+                </div> 
+               </div>
+             
+           </div>
+           <div class="row">
+            <div class="col">
+                <div class="form-group">
+                    <label  class="control-label">
+                        Address
+                    </label>
+                    <input type="text" name="address" ngModel class="form-control">
+                </div> 
+               </div>
+               <div class="col">
+                <div class="form-group">
+                    <label  class="control-label">
+                        Télephone
+                    </label>
+                    <input type="text" name="tele" ngModel class="form-control">
+                </div> 
+               </div>
+             
+           </div>
+           <div class="row">
+            <div class="col">
+                <div class="form-group">
+                    <label  class="control-label">
+                        Travail
+                    </label>
+                    <input type="text" name="travail" ngModel class="form-control">
+                </div> 
+               </div>
+               <div class="col">
+                <div class="form-group">
+                    <label  class="control-label">
+                        Nombre d'enfants
+                    </label>
+                    <input type="number" name="nombreEnfants" ngModel class="form-control">
+                </div> 
+               </div>
+             
+           </div>
+         
+          
+            <button class="btn btn-success" type="submit">Ajouter</button>
+    
+        </form>
+    </div>
+    </div>
+</div>

@@ -1,0 +1,74 @@
+<div class="container">
+    
+    <div class="card card-primary">
+        <div class="card-header">Liste des fiches</div>
+        
+        <div class="card-body">
+        
+            <div class="d-flex">
+            <div class="d-inline-block">
+                <form #f="ngForm" (ngSubmit)="onChercher(f.value)">
+                    <div class="form-group">
+                        <label>Fiche</label>&nbsp;
+                        <input type="text" ngModel name="keyword">&nbsp;
+                        <button type="submit" class="btn btn-success"><i class="fa fa-search" style="font-size:17px"></i> chercher</button>
+                    </div>
+               </form>
+            </div>
+            <div class="ml-auto d-inline-block">
+                <button (click)="download()" class="btn btn-primary">
+                    <i class="fa fa-print" style="font-size:17px"></i> Imprimer les fiches 
+                    </button> &nbsp;
+                <button (click)="ajouter()" class="btn btn-primary">
+                    <i class="fa fa-plus-square-o" style="font-size:17px"></i> Ajouter
+                    </button>
+            </div>
+        </div>
+      
+          
+            <table class="table table-bordered" *ngIf="fiches">
+                <thead>
+                    <tr>
+                       <th>Nom</th>
+                        <th>Prenom</th>
+                        <th>CIN</th>
+                        <th>Ville</th>
+                        <th>Etat civil</th>
+                        <th>Niveau d'étude</th>
+                        <th>Travail</th>
+                        <th>Lieu travail</th>
+                        <th>Télephone</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let p of fiches['_embedded'].fiches">
+                        <td>{{p.nom}}</td>
+                        <td>{{p.prenom}}</td>
+                        <td>{{p.cin}}</td>
+                        <td>{{p.ville}}</td>
+                        <td>{{p.etatCivil}}</td>
+                        <td>{{p.niveauEtude}}</td>
+                        <td>{{p.travail}}</td>
+                        <td>{{p.lieuTravail}}</td>
+                        <td>{{p.tele}}</td>
+                        <td>
+                            <a class="btn btn-danger" (click)="onDeleteFiche(p['_links'].self.href)"><i class="fa fa-remove" style="font-size:17px"></i></a>&nbsp;&nbsp;&nbsp;
+                            <a class="btn btn-success" (click)="onEditFiche(p)"><i class="fa fa-edit" style="font-size:17px"></i></a>
+                          
+                        </td>
+                    </tr>
+                </tbody>
+              
+            </table>
+            <ul *ngIf="pages" class="pagination">
+                <li [ngClass]="i==currentPage ? 'page-item active' : 'page-item'" *ngFor="let p of pages;let i = index">
+                    <a class="clickable page-link" (click)="onPageFiche(i)">{{i}}</a>
+                </li>
+            </ul>
+         
+          
+           
+        </div>
+    </div>
+</div>

@@ -1,0 +1,205 @@
+<div class="col-md-10 mx-auto">
+    <button (click)="gotoList()" class="btn btn-primary">Liste des fiches</button><br><br>
+    <div class="card">
+        <div class="card-header">
+            Nouvelle fiche
+        </div>
+        <div class="card-body">
+            <div *ngIf="currentFiche1">
+                <img src="{{this.pdiService.host+'/photoFiche/'+currentFiche1.id}}" style="width: 150px;height: 150px;" class="center" >
+            </div>
+           
+            <!-- <button (click)="onEditPhoto(currentFiche1.id)" class="btn btn-secondary mb-1">
+                upload
+            </button> -->
+            <p *ngIf="editPhoto" class="center mt-2">
+                <input type="file"  (change)="onSelectFile($event)">
+                <button class="btn btn-secondary" (click)="upload()">Télecharger</button>
+            </p>
+          
+        <form #f="ngForm" (ngSubmit)="onUpdateFiche(f.value)" *ngIf="currentFiche1">
+           
+            <div class="row">
+                <div class="col">
+                    <div class="form-group">
+                        <label  class="control-label">
+                            Nom
+                        </label>
+                        <input type="text" name="nom" ngModel [(ngModel)]="currentFiche1.nom" class="form-control">
+                    </div> 
+                   </div>
+                   <div class="col">
+                    <div class="form-group">
+                        <label  class="control-label">
+                            Prénom
+                        </label>
+                        <input type="text" name="prenom" ngModel [(ngModel)]="currentFiche1.prenom" class="form-control">
+                    </div> 
+                   </div>
+                 
+               </div>
+                
+           <div class="row">
+            <div class="col">
+                <div class="form-group">
+                    <label  class="control-label">
+                        Lieu de Naissance
+                    </label>
+                    <input type="text" name="lieuNaissance" ngModel [(ngModel)]="currentFiche1.lieuNaissance" class="form-control">
+                </div> 
+               </div>
+               <div class="col">
+                <div class="form-group">
+                    <label  class="control-label">
+                        Date naissance
+                    </label>
+                    <input type="date" name="dateNaissance" ngModel [(ngModel)]="currentFiche1.dateNaissance" class="form-control">
+                </div> 
+               </div>
+             
+           </div>
+         
+
+           <div class="row">
+            <div class="col">
+                <div class="form-group">
+                    <label  class="control-label">
+                        CIN
+                    </label>
+                    <input type="text" name="cin" ngModel [(ngModel)]="currentFiche1.cin" class="form-control">
+                </div> 
+               </div>
+               <div class="col">
+                <div class="form-group">
+                    <label  class="control-label">
+                        Nom de son pére
+                    </label>
+                    <input type="text" name="prenomPere" ngModel [(ngModel)]="currentFiche1.prenomPere" class="form-control">
+                </div> 
+               </div>
+             
+           </div>
+
+           <div class="row">
+            <div class="col">
+                <div class="form-group">
+                    <label  class="control-label">
+                        Nom de sa mére
+                    </label>
+                    <input type="text" name="prenomMere" ngModel [(ngModel)]="currentFiche1.prenomMere" class="form-control">
+                </div> 
+               </div>
+               <div class="col">
+                <div class="form-group">
+                    <label  class="control-label">
+                        Ville
+                    </label>
+                    <input type="text" name="ville" ngModel [(ngModel)]="currentFiche1.ville" class="form-control">
+                </div> 
+               </div>
+             
+           </div>
+           <div class="row">
+            <div class="col">
+                <div class="form-group">
+                    <label  class="control-label">
+                        Etat civile
+                    </label>
+                    <input type="text" name="etatCivil" ngModel [(ngModel)]="currentFiche1.etatCivil" class="form-control">
+                </div> 
+               </div>
+               <div class="col">
+                <div class="form-group">
+                    <label  class="control-label">
+                        Niveau d'étude
+                    </label>
+                    <input type="text" name="niveauEtude" ngModel [(ngModel)]="currentFiche1.niveauEtude"  class="form-control">
+                </div> 
+               </div>
+             
+           </div>
+           <div class="row">
+            <div class="col">
+                <div class="form-group">
+                    <label  class="control-label">
+                        Diplomes
+                    </label>
+                        <textarea class="form-control" name="diplomes" ngModel [(ngModel)]="currentFiche1.diplomes"  rows="5" id="comment"></textarea>
+                </div> 
+               </div>
+               <div class="col">
+                <div class="form-group">
+                    <label  class="control-label">
+                        Observations
+                    </label>
+                    <textarea class="form-control" name="observations" ngModel rows="5" [(ngModel)]="currentFiche1.observations" id="comment"></textarea>
+                </div> 
+               </div>
+              
+             
+           </div>
+           <div class="row">
+            <div class="col">
+                <div class="form-group">
+                    <label  class="control-label">
+                        Lieu de travail
+                    </label>
+                    <input type="text" name="lieuTravail" ngModel [(ngModel)]="currentFiche1.lieuTravail" class="form-control">
+                </div> 
+               </div>
+               <div class="col">
+                <div class="form-group">
+                    <label  class="control-label">
+                        Date de mise en service
+                    </label>
+                    <input type="date" name="dateEntreeOffice" ngModel [(ngModel)]="currentFiche1.dateEntreeOffice" class="form-control">
+                </div> 
+               </div>
+             
+           </div>
+           <div class="row">
+            <div class="col">
+                <div class="form-group">
+                    <label  class="control-label">
+                        Address
+                    </label>
+                    <input type="text" name="address" ngModel [(ngModel)]="currentFiche1.address" class="form-control">
+                </div> 
+               </div>
+               <div class="col">
+                <div class="form-group">
+                    <label  class="control-label">
+                        Télephone
+                    </label>
+                    <input type="text" name="tele" ngModel [(ngModel)]="currentFiche1.tele" class="form-control">
+                </div> 
+               </div>
+             
+           </div>
+           <div class="row">
+            <div class="col">
+                <div class="form-group">
+                    <label  class="control-label">
+                        Travail
+                    </label>
+                    <input type="text" name="travail" ngModel [(ngModel)]="currentFiche1.travail" class="form-control">
+                </div> 
+               </div>
+               <div class="col">
+                <div class="form-group">
+                    <label  class="control-label">
+                        Nombre d'enfants
+                    </label>
+                    <input type="number" name="nombreEnfants" ngModel [(ngModel)]="currentFiche1.nombreEnfants" class="form-control">
+                </div> 
+               </div>
+             
+           </div>
+         
+          
+            <button class="btn btn-success" type="submit">Modifier</button>
+    
+        </form>
+    </div>
+    </div>
+</div>
